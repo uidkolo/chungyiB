@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/index/order/order",
+    "pages/index/afterSaleList/afterSaleList",
+    "pages/index/incomeDetail/incomeDetail",
+    "pages/index/apply/apply",
+    "pages/index/team/team"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wxddcddecdc126673d"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,34 @@
+<view class='tab'>
+  <text class='tab-item {{team==0?"tab-active":""}}' bindtap='tab' data-index='0'>全部团队</text>
+  <text class='tab-item {{team==2?"tab-active":""}}' bindtap='tab' data-index='2'>加盟商</text>
+  <text class='tab-item {{team==1?"tab-active":""}}' bindtap='tab' data-index='1'>顾客</text>
+</view>
+
+<view class='new'>
+  <view class='new-title'>最近7天新增<text wx:if='{{team==0||team==2}}'>{{newShopNum}}个加盟商</text><text wx:if='{{team==0||team==1}}'>{{newUserNum}}个顾客</text></view>
+  <view class='list'>
+    <view class='list-item' wx:for='{{newList}}' wx:key='{{index}}'>
+      <view class='list-item-left'>
+        <image class='list-item-avatar' src='{{item.avatar}}'></image>
+        <text>{{item.name}}</text>
+      </view>
+      <view class='list-item-right'>
+        <text class='list-item-money'>+{{item.income}}</text>
+        <text>产生收益</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='list'>
+  <view class='list-item' wx:for='{{list}}' wx:key='{{index}}'>
+    <view class='list-item-left'>
+      <image class='list-item-avatar' src='{{item.avatar}}'></image>
+      <text>{{item.name}}</text>
+    </view>
+    <view class='list-item-right'>
+      <text class='list-item-money'>+{{item.income}}</text>
+      <text>产生收益</text>
+    </view>
+  </view>
+</view>

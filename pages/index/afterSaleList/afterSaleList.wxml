@@ -1,0 +1,29 @@
+<view class='list'>
+  <view class='item' wx:for='{{orders}}' wx:key='{{index}}'>
+    <view class='products'>
+      <view class='product '>
+        <image class='img' src='{{item.goods.design_front_thumb}}'></image>
+        <view class='right'>
+          <view class='title'>{{item.goods.clothes_name}}</view>
+          <view class='info'>
+            <text>{{item.goods.fabric_name}}</text>
+            <text>{{item.goods.size}}</text>
+            <text>{{item.goods.source}}</text>
+          </view>
+          <view class='bottom'>
+            <text class='price'>￥{{item.goods.price}}</text>
+            <text class='num'>x{{item.goods.count}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='aftersale-info'>
+      <text class='aftersale-info-btn'>{{item.way==1?"换":"退"}}</text>
+      <text class='aftersale-info-text'>{{item.way_word}}</text>
+      <text class='aftersale-info-time'>{{item.status_word}}</text>
+    </view>
+  </view>
+</view>
+<view class='end' wx:if='{{end}}'>
+  <text>-- END --</text>
+</view> 

@@ -1,0 +1,124 @@
+<view class='user-box'>
+  <view class='user'>
+    <image class='avatar' src='{{info.logo}}'></image>
+    <view class='user-right'>
+      <view class='user-name'>
+        <text class='nickname'>{{info.shop_name}}</text>
+        <text class='user-bind' bindtap='bindWechat' wx:if='{{bindStatus==0}}'>绑定微信</text>
+      </view>
+      <view class='user-num'>
+        累计收益：{{info.income_total}}元<text class='user-num-line'></text><navigator url='/pages/index/team/team'>推广团队：{{info.spread_count}}</navigator> 
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='earn'>
+  <view class='earn-month'>
+    <view class='earn-month-top'>
+      <picker range='{{selectData}}' range-key='label' bindchange='select'>
+        <view class='earn-select'>
+          <text>{{selectLabel}}(元)</text>
+          <image class='earn-select-icon' src='/images/common/icon_select.png'></image>
+        </view>
+      </picker>
+      <text class='earn-month-top-num'>{{income.income}}</text>
+      <text class='earn-month-top-tip'>收益=销售额*{{info.percent}}%（设计费剔除）</text>
+    </view>
+    <view class='earn-month-bottom'>
+      <view class='earn-month-bottom-item'>
+        <text class='earn-label'>销售额(元)</text>
+        <text class='earn-value'>{{income.sales_volume}}</text>
+      </view>
+      <view class='earn-month-bottom-item'>
+        <text class='earn-label'>订单量(笔)</text>
+        <text class='earn-value'>{{income.order_count}}</text>
+      </view>
+      <view class='earn-month-bottom-item'>
+        <text class='earn-label'>访客量(人)</text>
+        <text class='earn-value'>{{income.guest}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='earn-detail'>
+    <view class='earn-detail-item'>
+      <view class='earn-detail-item-top'>
+        <text class='earn-label'>剩余收益(元)</text>
+        <text class='earn-value'>{{info.surplus_income}}</text>
+      </view>
+      <navigator class='earn-detail-btn' url='/pages/index/incomeDetail/incomeDetail'>流水明细</navigator>
+    </view>
+    <view class='earn-detail-item'>
+      <view class='earn-detail-item-top'>
+        <text class='earn-label'>可提现(元)</text>
+        <text class='earn-value red'>{{info.account}}</text>
+      </view>
+      <view class='earn-detail-btn'>提现</view>
+    </view>
+    <view class='earn-detail-item'>
+      <view class='earn-detail-item-top'>
+        <text class='earn-label'>待入账(元)</text>
+        <text class='earn-value'>{{info.wait_income}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='order'>
+    <navigator class='more' url='/pages/index/order/order?index=0'>
+      <text class='title'>已出售的订单</text>
+      <view class='title-right'>
+        <text>全部订单</text>
+        <image class='icon' src='/images/common/more.png'></image>
+      </view>
+    </navigator>
+    <view class='box'>
+      <navigator class='item' url='/pages/index/order/order?index=1'>
+        <text class='num'>{{info.order_unpay}}</text>
+        <image class='icon' src='/images/index/order_01.png'></image>
+        <text>待付款</text>
+      </navigator>
+      <navigator class='item' url='/pages/index/order/order?index=2'>
+        <text class='num'>{{info.order_wait_get}}</text>
+        <image class='icon' src='/images/index/order_02.png'></image>
+        <text>待收货</text>
+      </navigator>
+      <navigator class='item' url='/pages/index/order/order?index=3'>
+        <text class='num'>{{info.order_over}}</text>
+        <image class='icon' src='/images/index/order_03.png'></image>
+        <text>已完成</text>
+      </navigator>
+      <navigator class='item' url='/pages/index/afterSaleList/afterSaleList'>
+        <text class='num'>{{info.return_goods_count}}</text>
+        <image class='icon' src='/images/index/order_04.png'></image>
+        <text>退款/售后</text>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<view class='code-box'>
+  <view class='code'>
+    <view class='code-title'>您今日的收益全网排{{info.rank}}名</view>
+    <view class='code-btn-box'>
+      <view class='code-left' bindtap='showCode' data-index='1'>邀请码</view>
+      <view class='code-right' bindtap='showCode' data-index='2'>推广码</view>
+    </view>
+  </view>
+</view>
+
+<view class='design-box'>
+  <navigator class='design' target='miniProgram' app-id='wxddcddecdc126673d' extra-data='{{extraData}}'>
+    <image class='design-icon' src='/images/common/icon_share.png'></image>
+    <text>去推广</text>
+  </navigator>
+</view>
+
+<view class='mask' wx:if='{{codeIndex==1||codeIndex==2}}'>
+  <view class='mask-code-box'>
+    <icon class='mask-close' type='cancel' size='80rpx' color='#fff' bindtap='closeMask'></icon>
+    <image class='mask-code' src='{{shopCode}}' wx:if='{{codeIndex==1}}'></image>
+    <image class='mask-code' src='{{spredCode}}' wx:if='{{codeIndex==2}}'></image>
+    <view class='mask-code-btn' bindtap='saveCode'>保存到相册</view>
+  </view>
+</view>

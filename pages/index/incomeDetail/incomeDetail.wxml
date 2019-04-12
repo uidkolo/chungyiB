@@ -1,0 +1,26 @@
+<view class='tab-box'>
+  <view class='tab'>
+    <text class='tab-item {{type==0?"active":""}}' bindtap='tab' data-type='0'>全部</text>
+    <text class='tab-item {{type==1?"active":""}}' bindtap='tab' data-type='1'>提现</text>
+    <text class='tab-item {{type==2?"active":""}}' bindtap='tab' data-type='2'>收益</text>
+    <text class='tab-item {{type==3?"active":""}}' bindtap='tab' data-type='3'>支付</text>
+    <text class='tab-item {{type==4?"active":""}}' bindtap='tab' data-type='4'>退款</text>
+  </view>
+</view>
+
+<view class='list'>
+  <view class='item' wx:for='{{flows}}' wx:key='{{index}}'>
+    <view class='item-left'>
+      <view class='item-label'>{{item.type_word}}</view>
+      <view class='item-value'>{{item.create_time}}</view>
+    </view>
+    <view class='item-right'>
+      <view class='item-label'>{{item.type==1||item.type==3?"-":"+"}}{{item.money}}</view>
+      <view class='item-value'>{{item.account_balance}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='end' wx:if='{{end}}'>
+  <text>-- END --</text>
+</view>

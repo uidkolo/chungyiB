@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#4079FF",
+  "navigationBarTitleText": "串衣商家后台",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

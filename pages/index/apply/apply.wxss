@@ -1,0 +1,89 @@
+.form{
+  padding: 30rpx;
+}
+.input{
+  height: 90rpx;
+  border: 1px solid #F7C900;
+  border-radius: 8rpx;
+  padding-left: 30rpx;
+  font-size: 28rpx;
+  margin-bottom: 30rpx;
+  color: #4D4D4D;
+}
+.picker{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90rpx;
+  border: 1px solid #F7C900;
+  font-size: 28rpx;
+  border-radius: 8rpx;
+  color: #4D4D4D;
+  padding: 0 30rpx;
+  margin-bottom: 30rpx;
+}
+.picker-icon{
+  width: 16rpx;
+  height: 10rpx;
+}
+.message{
+  border: 1px solid #F7C900;
+   border-radius: 8rpx;
+}
+.textarea{
+  padding: 30rpx;
+  font-size: 28rpx;
+  color: #4D4D4D;
+  height: 200rpx;
+}
+.message-btn{
+  background: rgba(247,201,0,0.2);
+  color: #CCAA00;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.btn{
+  height: 92rpx;
+  text-align: center;
+  line-height: 92rpx;
+  color: #1A1A1A;
+  font-size: 36rpx;
+  background: #F7C900;
+  margin: 30rpx auto 0;
+  border-radius: 8rpx;
+}
+.license{
+  display: block;
+  margin: 10rpx auto;
+  width: 420rpx;
+  height: 594rpx;
+}
+.item-code{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+.item-code-input{
+  height: 90rpx;
+  border: 1px solid #F7C900;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  padding: 0 20rpx;
+  flex-grow: 1;
+  margin-right: 30rpx;
+}
+.item-code-btn{
+  height: 90rpx;
+  background: #F7C900;
+  line-height: 90rpx;
+  text-align: center;
+  width: 220rpx;
+  flex-shrink: 0;
+  font-size: 28rpx;
+  color: #1A1A1A;
+  border-radius: 8rpx;
+}

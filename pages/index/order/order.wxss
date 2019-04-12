@@ -1,0 +1,141 @@
+page{
+  background: #f5f5f5;
+}
+.tab-box{
+  height: 80rpx;
+}
+.tab{
+  position: fixed;
+  width: 100%;
+  border-top: 1px solid #dcdcdc;
+  height: 80rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 28rpx;
+  color: #4d4d4d;
+  padding: 0 30rpx;
+}
+.tab .item{
+  height: 76rpx;
+  line-height: 76rpx;
+}
+.tab .item.active{
+  color: #FF8400;
+  border-bottom: 4rpx solid #FF8400;
+}
+
+.list{
+  padding: 20rpx 20rpx 0;
+}
+.list .item{
+  background: #fff;
+  border-radius: 8rpx;
+  padding: 20rpx;
+}
+.list .item+.item{
+  margin-top: 20rpx;
+}
+.list .item .head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+   font-size: 26rpx;
+}
+.list .item .head .date{
+  color: #999;
+}
+.list .item .head .state{
+  color: #FF8400;
+}
+.list .item .products{
+  padding: 20rpx 0;
+}
+.list .item .product{
+  padding: 20rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.list .item .product .img{
+  width: 109rpx;
+  height: 140rpx;
+  flex-shrink: 0;
+  margin: 0 40rpx 0 0rpx;
+}
+.list .item .product .right{
+  flex-grow: 1;
+  min-height: 140rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.list .item .product .right .title{
+  color: #4D4D4D;
+  font-size: 26rpx;
+}
+.list .item .product .right .info{
+  color: #B3B3B3;
+  font-size: 24rpx;
+}
+.list .item .product .right .info text{
+  margin-right: 10rpx;
+}
+.list .item .product .right .bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.list .item .product .right .bottom .price{
+  color: #4D4D4D;
+  font-size: 30rpx;
+}
+.list .item .product .right .bottom .num{
+  color: #666;
+  font-size: 28rpx;
+}
+.list .item .total{
+  color: #4D4D4D;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 20rpx;
+}
+.list .item .total .price{
+  margin-left: 20rpx;
+}
+.list .item .total .price text{
+  font-size: 30rpx;
+}
+.list .item .btns{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40rpx;
+}
+.list .item .btns .cancel{
+  color:#808080;
+  font-size: 26rpx;
+  height: 60rpx;
+  width: 164rpx;
+  line-height: 54rpx;
+  text-align: center;
+  border: 1rpx solid #b3b3b3;
+  border-radius: 54rpx;
+  margin: 0 0 0 20rpx;
+}
+.list .item .btns .cancel::after{
+  border: none;
+}
+.list .item .btns .confirm{
+  color:#FF8400;
+  font-size: 26rpx;
+  height: 60rpx;
+  width: 164rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border: 1rpx solid #FF8400;
+  border-radius: 54rpx;
+  margin-left: 20rpx;
+}

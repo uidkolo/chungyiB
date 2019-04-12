@@ -1,0 +1,44 @@
+<view class='tab-box'>
+  <view class='tab'>
+    <text class='item {{tabIndex==="0"?"active":""}}' bindtap='tab' data-index='0'>全部</text>
+    <text class='item {{tabIndex=="1"?"active":""}}' bindtap='tab' data-index='1'>待付款</text>
+    <text class='item {{tabIndex=="2"?"active":""}}' bindtap='tab' data-index='2'>待收货</text>
+    <text class='item {{tabIndex=="3"?"active":""}}' bindtap='tab' data-index='3'>已完成</text>
+  </view>
+</view>
+
+<view class='list'>
+  <view class='item' wx:for='{{orders}}' wx:key='{{index}}'>
+    <view class='head'>
+      <text class='date'>{{item.create_time}}</text>
+      <text class='state'>{{item.status_word}}</text>
+    </view>
+    <view class='products'>
+      <view class='product ' wx:for='{{item.goods}}' wx:for-item='item2' wx:for-index='index2' wx:key='{{index2}}'>
+        <image class='img' src='{{item2.design_front_thumb}}'></image>
+        <view class='right'>
+          <view class='title'>{{item2.clothes_name}}</view>
+          <view class='info'>
+            <text>{{item2.fabric_name}}</text>
+            <text>{{item2.size}}</text>
+            <text>{{item2.source}}</text>
+          </view>
+          <view class='bottom'>
+            <text class='price'>￥{{item2.price}}</text>
+            <text class='num'>x{{item2.count}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='total'>
+      <text class='num'>共{{item.goods_count}}件商品</text>
+      <view class='price'>合计：￥
+        <text>{{item.all_goods_price}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='end' wx:if='{{end}}'>
+  <text>-- END --</text>
+</view>

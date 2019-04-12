@@ -1,0 +1,29 @@
+<view class='form'>
+  <input class='input' placeholder='请输入企业名称' placeholder-class='placeholder' value='{{company}}' bindinput='input' data-key='company'></input>
+  <input class='input' placeholder='请输入企业负责人' placeholder-class='placeholder' value='{{leading_official}}' bindinput='input' data-key='leading_official'></input>
+  <input class='input' type='number' placeholder='请输入手机号码' placeholder-class='placeholder' bindinput='input' data-key='tel' value='{{tel}}'></input>
+  <view class='item-code' wx:if='{{!haveMobile}}'>
+    <input type='number' class='item-code-input' placeholder='验证码' placeholder-class='placeholder' bindinput='input' data-key='code'></input>
+    <view class='item-code-btn' bindtap='getCode' wx:if='{{!codeStatus}}'>获取验证码</view>
+    <view class='item-code-btn' wx:else>{{timer}}s</view>
+  </view>
+  <picker mode='region' bindchange='pickerAdd'>
+    <view class='picker'>
+      <text>{{!add?"所在省市":add}}</text>
+      <image class='picker-icon' src='/images/common/icon_select.png'></image>
+    </view>
+  </picker>
+  <input class='input' placeholder='输入企业详细地址' placeholder-class='placeholder' bindinput='input' data-key='address' value='{{address}}'></input>
+  <picker range='{{industrys}}' range-key='name' bindchange='pickerIndustry'>
+    <view class='picker'>
+      <text>{{!industry?"所属行业":industryValue}}</text>
+      <image class='picker-icon' src='/images/common/icon_select.png'></image>
+    </view>
+  </picker>
+  <view class='message'>
+    <textarea class='textarea' placeholder='如果您有什么要跟我们说的，请在这里留言' placeholder-class='placeholder' bindinput='input' data-key='message'></textarea>
+    <image class='license' src='{{license}}' wx:if='{{license}}'></image>
+    <view class='message-btn' bindtap='chooseImg'>上传营业执照</view>
+  </view>
+  <view class='btn' bindtap='apply'>立即加盟</view>
+</view>

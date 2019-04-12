@@ -1,0 +1,12 @@
+page,view, navigator,input,textarea, scroll-view{
+  box-sizing: border-box
+}
+img{
+  display: block;
+}
+.end{
+  color: #999;
+  text-align: center;
+  padding: 30rpx 0;
+  font-size: 24rpx;
+}

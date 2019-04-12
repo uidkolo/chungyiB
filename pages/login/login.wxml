@@ -1,0 +1,20 @@
+<image class='banner' src='/images/common/login_banner.png'></image>
+
+<view class='form'>
+  <view class='form-item'>
+    <text class='form-label'>账号：</text>
+    <input class='form-input' bindinput='input' data-key='name'></input>
+  </view>
+  <view class='form-item'>
+    <text class='form-label'>密码：</text>
+    <input class='form-input' type='password' bindinput='input' data-key='password'></input>
+  </view>
+</view>
+
+<view class='btn' bindtap='login'>登录</view>
+
+<view class='bottom'>
+  <image class='bottom-logo' src='/images/common/logo.png'></image>
+  <text class='bottom-href'>chuan-yi.com</text>
+  <text class='bottom-tip'>串衣定制提供技术支持</text>
+</view>
